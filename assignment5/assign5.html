@@ -1,0 +1,196 @@
+<!-- 
+Web 222 SFF
+Instructor: Dr. Tanvir Alam
+Student Name: Xiaochen Wang
+Student ID: 015297153
+Email: xwang345@myseneca.ca 
+Date: 2017/04/09
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>signup</title>
+	<link rel="stylesheet" type="text/css" href="css/assign5.css">
+	<script type="text/javascript" src="js/assign5.js"></script>
+</head>
+<body>
+<div id="container">
+<div id="head_Big">
+	<h1>JobSearch<span>.com</span></h1>
+</div>
+<div id="head_Little">
+	<h2>&nbsp; Create Your Account</h2>
+	<h3>&lowast;&nbsp; Required infromation</h3>
+</div>
+	<form action="https://httpbin.org/post" method="post">
+		<section id="Basic_Information">
+	    	<h3>Basic Information</h3>
+				<div class="needContent">
+					<label for="mail">Email</label>
+					<span class="red-star">&lowast;</span>
+					<input type="Email" id="mail"  required="required"() onkeyup="starShow()">
+				</div>
+				<div  class="needContent">
+					<label for="Password">Password</label>
+					<span class="red-star">&lowast;</span>
+					<input type="password" name="Password" id="Password" required="required"
+					 onkeyup="starShow()" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" 
+					 onchange="checkPassword()">
+				</div>
+				<div class="needContent">
+					<label for="Retype_Password" >Retype Password</label>
+					<span class="red-star">&lowast;</span>
+					<input type="password" name="Retype_Password" id="Retype_Password"
+					 pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" required="required" 
+					 onkeyup="starShow()" onchange="checkPassword()">
+				</div>
+				<div class="needContent">
+					<label for="First_Name" >First Name</label>
+					<span class="red-star">&lowast;</span>
+					<input type="text" name="First_Name" id="First_Name" 
+					required="required" pattern="[a-zA-Z\'\-]{1,}" onkeyup="starShow()">
+				</div>
+				<div class="needContent">
+					<label for="Last_Name" >Last Name</label>
+					<span class="red-star">&lowast;</span>
+					<input type="text" name="Last_Name" id="Last_Name" 
+					required="required" pattern="[a-zA-Z\'\-]{1,}" onkeyup="starShow()">
+				</div>
+				<div id="phoneNumber" class="needContent">
+					<label for="Phone_Number" >Phone Number</label>
+					<span class="red-star">&lowast;</span>
+					<input type="text" name="Phone_Number" id="Phone_Number" 
+					required="required" onchange="Error()" placeholder="999-999-9999" 
+					onkeyup="starShow()" >
+					<p id="showEorror"></p>
+				</div>
+				<div class="needContent">
+					<label for="Address" >Address</label>
+					<span class="red-star">&lowast;</span>
+					<input type="text" name="Address" id="Address"  
+					required="required" onkeyup="starShow()">
+				</div>
+				<div class="needContent" class="needContent">
+					<label for="City" >City</label>
+					<span class="red-star">&lowast;</span>
+					<input type="text" name="City" id="City" required="required"
+					 onkeyup="starShow()">
+				</div>
+				<div class="needContent">
+					<label for="Province" >Province</label>
+					<span class="red-star">&lowast;</span>
+					<select name="Province" id="Province" onkeyup="starShow()"
+					 required="required">
+						<option value="0">Alberta</option>
+						<option value="1">British Columbia</option>
+						<option value="2">Ontario</option>
+						<option value="3">Quebec</option>
+						<option value="4">Nova Scotia</option>
+						<option value="5">New Brunswick</option>
+						<option value="6">Manitoba</option>
+						<option value="7">Prince Edward Island</option>
+						<option value="8">Saskatchewan</option>
+						<option value="9">Newfoudland and Labrador</option>
+						<option value="10">Northwest Territories</option>
+						<option value="11">Yukon</option>
+						<option value="12">Nunavut</option>
+					</select>
+				</div>
+				<div class="needContent">
+					<label for="Country" >Country</label>
+					<span class="red-star">&lowast;</span>
+					<input list="browsers" name="Country" required="required">
+					<datalist id="browsers">
+  						<option value="Canada">
+				    	<option value="The United States">
+						<option value="China">
+						<option value="Janpan">
+						<option value="The United Kingdom">
+					</datalist>
+				</div>
+			</section>
+			<section id="Education">
+			    <h3>Education</h3>
+				<div class="needContent">
+					<label for="School">School</label>
+					<span class="red-star">&lowast;</span>
+					<input type="text" name="School" id="School" 
+					required="required" onkeyup="starShow()">
+				</div>
+				<div class="needContent">
+					<label for="Program">Program</label>
+					<span class="red-star">&lowast;</span>
+					<input type="text" name="Program" id="Program" 
+					required="required" onkeyup="starShow()">
+				</div>
+				<div class="needContent">
+					<label for="Education_Level" required="required">Education Level</label>
+					<span class="red-star">&lowast;</span>
+					<select name="Education_Level" id="Education_Level" onchange ="starShow()">
+						<option value="0">-select-</option>
+						<option value="1">Technical Diploma</option>
+						<option value="2">College Diploma</option>
+						<option value="3">Bachelor's Degree</option>
+						<option value="4">Master's Degree</option>
+						<option value="5">Other</option>
+					</select>
+				</div>
+				<div>
+					<fieldset>
+						<legend>Education Satus</legend>
+						<div>
+							<input type="radio" name="graduate" id="Graduated" 
+							value="Graduated" required="required">
+							<label for="Graduated">Graduated</label>
+							<br>
+							<input type="radio" name="graduate" id="Current_Enrolled" 
+							value="Current_Enrolled" required="required">
+							<label for="Current_Enrolled" >Current Enrolled</label>
+							<br>
+							<input type="radio" name="graduate" id="Did_not_Graduate" 
+							value="Did_not_Graduate" required="required">
+							<label for="Did_not_Graduate" >Did not Graduate</label>
+
+						</div>			
+					</fieldset>
+				</div>
+				<div>
+					<label for="Garduation_Date">Garduation Date</label>
+					<input type="text" name="Garduation_Date" id="Garduation_Date">
+				</div>
+			</section>
+			<section id="Work_Experience">
+				<h3>Work Experience</h3>
+				<div>
+					<label for="Employer">Employer</label>
+					<input type="text" name="Employer" id="Employer">
+				</div>
+				<div>
+					<label for="Job_Title">Job Title</label>
+					<input type="text" name="Job_Title" id="Job_Title">
+				</div>
+				<div>
+					<label for="Job_Duty" class="textarea-label">Job Duty</label>
+					<textarea id="Job_Duty" name="Job_Duty"></textarea>
+				</div>
+				<div>
+					<label for="Worked_Year">Worked Year</label>
+					<input type="number" name="Worked_Year" id="Worked_Year" max="20" min="1">
+				</div>
+			</section>
+			<section id="Attachments">
+				<h3>Attachments</h3>
+				<div>
+					<label for="Attachments_Input">Attachments</label>
+					<input type="file" name="Attachments_Input" id="Attachments_Input">
+				</div>
+			</section>
+			<div class="btn-group">
+				<input type="submit" class="button" value="Submit">
+				<input type="reset" class="button" value="Clear">
+			</div>
+		</form>
+	</body>
+</html>
